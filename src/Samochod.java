@@ -1,13 +1,13 @@
 import java.io.Serializable;
 
-public class Samochod implements Serializable
+public class Samochod implements Serializable //Klasa Samochod implementuje interfejs Serializable aby mozna bylo serializowac i zapisywac do pliku
 {
-    protected String marka;
+    protected String marka;   //zmienne
     protected String model;
     protected int rokProdukcji;
     protected int przebieg;
 
-    public String getMarka()
+    public String getMarka() //gettery i settery dla poszczegolnych pol aby mozna bylo edytowac i wyciagac wartosci poszczegolnych pol klasy
     {
         return marka;
     }
@@ -48,6 +48,8 @@ public class Samochod implements Serializable
         this.przebieg=newPrzebieg;
     }
 
+    //koniec getterow i setterow
+
     public Samochod(String marka, String model, int rokProdukcji, int przebieg)
     {
         this.marka = marka;
@@ -59,16 +61,17 @@ public class Samochod implements Serializable
     public Samochod()
     { }
 
-    public String Informacje()
+    public String Informacje() // metoda zwracajaca informacje o obiekcie zapisane w stringu
 {
     String informacje;
     informacje=this.marka + " " + this.model + " " + this.rokProdukcji + " " + this.przebieg;
     return informacje;
 }
 
-    public String toString() {
+    public String toString()  //metoda zwracajaca nowy string ktory bedzie zapisany do pliku
+    {
         return new StringBuffer(" Marka: ").append(this.marka)
-                .append(" Model : ").append(this.model).append(" Rok Produkcji : ").append(this.rokProdukcji).append("Przebieg : ").append("\n").toString();
+                .append(" Model : ").append(this.model).append(" Rok Produkcji: ").append(this.rokProdukcji).append("Przebieg: ").append("\n").toString();
     }
 
 }
